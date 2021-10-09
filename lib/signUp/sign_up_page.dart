@@ -126,20 +126,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   label: 'User name',
                   hintTextItem: 'Please enter your User name',
                 ),
-                //TextFormField() Widget was here INSTEAD OF TextField():
-                // TextFormField(
-                //   validator: regExpUsernameValidator,
-                //   autovalidate: true,
-                //   onSaved: (newValue) {
-                //     username=newValue;
-                //   },
-                //   decoration: InputDecoration(
-                //       icon: Icon(Icons.perm_identity),
-                //       labelStyle: TextStyle(fontSize: 30),
-                //       labelText: 'User name',
-                //       hintText: 'Please enter your User name'
-                //   ),
-                // ),
                 new TextFormFieldItem(
                     functionRegExp: (value)=> regExpEmailValidator(value),
                     onSaved: (newValue)=>email = newValue,
