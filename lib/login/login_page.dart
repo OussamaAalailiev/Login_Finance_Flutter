@@ -121,17 +121,24 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Flexible(
               flex: 2,
-              child: RaisedButton(
-                  color: Colors.blue,
-                  onPressed:
-                    //send Function:
-                    send,
-                  child: Text('Login',
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white),),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: SizedBox(
+                  width: 150,
+                  height: 50,
+                  child: RaisedButton(
+                        color: Colors.blue,
+                        onPressed:
+                          //send Function:
+                          send,
+                        child: Text('Login',
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white),),
+                    ),
+                ),
               ),
-            ),
+              ),
             Flexible(
               flex: 2,
               child: Container(
