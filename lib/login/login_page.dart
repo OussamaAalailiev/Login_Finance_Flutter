@@ -124,14 +124,15 @@ class _LoginPageState extends State<LoginPage> {
               child: Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: SizedBox(
-                  width: 150,
+                  width: 250,
                   height: 50,
                   child: RaisedButton(
-                        color: Colors.blue,
+                        color: Colors.indigo,
                         onPressed:
                           //send Function:
                           send,
-                        child: Text('Login',
+                        child: Text(
+                          'Login',
                           style: TextStyle(
                               fontSize: 25,
                               color: Colors.white),),
@@ -139,6 +140,24 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               ),
+            SizedBox(
+              height: 50,
+              width: 250,
+              child: RaisedButton(
+                  color: Colors.grey[200],
+                  onPressed: (){},
+                  child: Row(
+                    children: <Widget>[
+                      Image.asset(
+                        'images/btn_google_dark_normal_mdpi.9.png', width: 40,),
+                      SizedBox(width: 12),
+                      Text(
+                      'Sign up with google',
+                      style: TextStyle(fontSize: 18, color: Colors.black),),
+                ],
+               ),
+              ),
+            ),
             Flexible(
               flex: 2,
               child: Container(
@@ -148,19 +167,15 @@ class _LoginPageState extends State<LoginPage> {
                   title: Row(
                     children: [
                       Text(
-                        'Don\'t you have an account yet? ' ,
+                        'Don\'t you have an account' ,
                         style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.bold),),
-                      RaisedButton(
-                        onPressed: (){
-                          Navigator.pushNamed(context, '/signUp');
-                        },
-                        child: Text(
-                                  'Sign Up!',
-                                   style: TextStyle(fontSize: 20),),
-                        textColor: Colors.white,
-                        color: Colors.indigo,
+                      RaisedButton.icon(
+                          onPressed: (){Navigator.pushNamed(context, '/signUp');},
+                          icon: Icon(Icons.email),
+                          label: Text('Create new account', style: TextStyle(fontSize: 16),),
+                          color: Colors.grey[400],
                       )
                     ],
                   ),

@@ -25,35 +25,57 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(height: 10,),
           Flexible(
             flex: 2,
-            child: RaisedButton(
-              color: Colors.cyanAccent,
-              padding: EdgeInsets.all(80),
-              onPressed: (){},
-              child: Text('Give Loans', style: TextStyle(fontSize: 22, color: Colors.black)),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(30, 100, 30, 30),
+              child: RaisedButton(
+                color: Colors.indigo,
+                padding: EdgeInsets.all(10),
+                onPressed: (){},
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(width: 50,),
+                      Image.asset('images/loan-money.png', color: Colors.white, height: 50,),
+                      SizedBox(width: 50,),
+                      Text('Give Loans', style: TextStyle(fontSize: 22, color: Colors.white))
+                    ]
+                ),
+              ),
             ),
           ),
           SizedBox(height: 20,),
 
           Flexible(
             flex: 2,
-            child: RaisedButton(
-              color: Colors.redAccent,
-              padding: EdgeInsets.all(65),
-              onPressed: (){},
-              child: Text('Borrow Money', style: TextStyle(fontSize: 22, color: Colors.black)),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
+              child: RaisedButton(
+                color: Colors.indigo,
+                padding: EdgeInsets.all(10),
+                onPressed: (){},
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(width: 50,),
+                      Image.asset('images/borrow-money-v2.png', height: 50,),
+                      SizedBox(width: 50,),
+                      Text('Borrow Money', style: TextStyle(fontSize: 22, color: Colors.white))
+                    ]
+                ),
+              ),
             ),
           ),
           SizedBox(height: 20,),
 
-          Flexible(
-            flex: 2,
-            child: RaisedButton(
-              color: Colors.green,
-              padding: EdgeInsets.all(80),
-              onPressed: (){},
-              child: Text('Donate Money', style: TextStyle(fontSize: 22, color: Colors.black)),
-            ),
-          ),
+          // Flexible(
+          //   flex: 2,
+          //   child: RaisedButton(
+          //     color: Colors.indigo,
+          //     padding: EdgeInsets.all(80),
+          //     onPressed: (){},
+          //     child: Text('Donate Money', style: TextStyle(fontSize: 22, color: Colors.black)),
+          //   ),
+          // ),
           SizedBox(height: 20,),
         Flexible(
             flex: 1,
