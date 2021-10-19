@@ -153,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(width: 12),
                       Text(
                       'Sign up with google',
-                      style: TextStyle(fontSize: 18, color: Colors.black),),
+                      style: TextStyle(fontSize: 15, color: Colors.black),),
                 ],
                ),
               ),
@@ -169,12 +169,12 @@ class _LoginPageState extends State<LoginPage> {
                       Text(
                         'Don\'t you have an account' ,
                         style: TextStyle(
-                                    fontSize: 15,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.bold),),
                       RaisedButton.icon(
                           onPressed: (){Navigator.pushNamed(context, '/signUp');},
                           icon: Icon(Icons.email),
-                          label: Text('Create new account', style: TextStyle(fontSize: 16),),
+                          label: Text('Create new account', style: TextStyle(fontSize: 13),),
                           color: Colors.grey[400],
                       )
                     ],

@@ -13,16 +13,16 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Home transactions'),
         centerTitle: true,
       ),
-      body:  Column(
+      body:  ListView(
     //MainAxisSize.min: to resolve the problem of 'renderPixels Overflow of Column Widget'.
     //       mainAxisSize: MainAxisSize.min,
         children: [
           /**I have chosen 'Flexible(flex: ..)' INSTEAD OF 'Expanded()' to resolve the
            *  overFlow rendering Objects Pixels: */
           SizedBox(height: 10,),
-          Flexible(
-            flex: 2,
-            child: Padding(
+          // Flexible(
+          //   flex: 2,
+             Padding(
               padding: EdgeInsets.fromLTRB(30, 100, 30, 30),
               child: RaisedButton(
                 color: Colors.indigo,
@@ -39,12 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-          ),
+          //),
           SizedBox(height: 20,),
 
-          Flexible(
-            flex: 2,
-            child: Padding(
+          // Flexible(
+          //   flex: 2,
+             Padding(
               padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
               child: RaisedButton(
                 color: Colors.indigo,
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-          ),
+         // ),
           SizedBox(height: 20,),
 
           // Flexible(
@@ -74,15 +74,15 @@ class _MyHomePageState extends State<MyHomePage> {
           //   ),
           // ),
           SizedBox(height: 20,),
-        Flexible(
-            flex: 1,
-            child: Center(
+        // Flexible(
+        //     flex: 1,
+             Center(
               child: Text('@All rights are reserved.',
                        style: TextStyle(
                        fontSize: 17,
                        color: Colors.black),),
             )
-         ),
+         // ),
         ],
       ),
 
