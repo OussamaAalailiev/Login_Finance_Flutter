@@ -1,43 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:login_finance/profile/signup_to_profile.dart';
 import 'package:login_finance/shared/widgets/text_field_item.dart';
 
 class SignUpPage extends StatefulWidget {
   ///I couldn't use setState(){] in this class:
+
+  ///Constructor
+  //SignUpPage({@required this.username,@required  this.email,@required  this.phoneNumber,@required  this.city,@required  this.address});
+
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }
 //Class converted FROM Stateless TO Stateful widget:
 class _SignUpPageState extends State<SignUpPage> {
-  //GlobalKey added to uniquely identify the Form() widget:
-  final formKey = new GlobalKey<FormState>();
-/// Properties of the state:
+  ///Controller :
+  // TextEditingController userController;
+  // TextEditingController emailController;
+  // TextEditingController cityController;
+  // TextEditingController addressController;
+  // TextEditingController phoneController;
+  /// Properties of the state:
   var phoneNumber;
   var email;
   String username;
   var city;
   var newPassword;
   var address;
+  //GlobalKey added to uniquely identify the Form() widget:
+  final formKey = new GlobalKey<FormState>();
+
   /**Instead of the 'validator: (value){...}' function down below,
    *  I have used Regular expression function ex: "stringRegExpPhoneNumValidator" to check the
    *  corresponding input*/
 
-/// validator function: */
-  onCheck(){
-    var formData = formKey.currentState;
-    if(formData.validate()){
-      formData.save();
-      print('Phone phoneNumber: $phoneNumber');
-      print('Username: $username');
-      print('Email: $email');
-      print('City: $city');
-      print('Address: $address');
-      print('New password: $newPassword');
-      Navigator.pushNamed(context, "/home");
-    }else{
-      print('Invalid input');
-    }
-  }//onCheck()
+/// validator function 'onCheck': */
+//   onCheck() {
+//     var formData = formKey.currentState;
+//     if (formData.validate()) {
+//       formData.save();
+//       print('userController.text'+ userController.text);
+//       print('Phone phoneNumber: $phoneNumber');
+//       print('Username: $username');
+//       print('Email: $email');
+//       print('City: $city');
+//       print('Address: $address');
+//       print('New password: $newPassword');
+//
+//     //  Navigator.pushNamed(context, "/profile");
+//     } else {
+//       print('Invalid input');
+//     }
+//   }
+//   }//onCheck()
   ///Method for Regular Expression Validator for the 'Username' entered in the input BY the user:
   String regExpUsernameValidator(String value) {
     String pattern= r'(^[a-zA-Z-.]+[0-9]*$)';
@@ -120,6 +135,7 @@ class _SignUpPageState extends State<SignUpPage> {
             child: ListView(
               children: [
                 new TextFormFieldItem(
+                 // controller: userController,
                   functionRegExp: (value)=>regExpUsernameValidator(value),
                   onSaved: (newValue)=>username=newValue,
                   icon: Icon(Icons.perm_identity),
@@ -127,6 +143,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   hintTextItem: 'Please enter your User name',
                 ),
                 new TextFormFieldItem(
+                  //  controller: emailController,
                     functionRegExp: (value)=> regExpEmailValidator(value),
                     onSaved: (newValue)=>email = newValue,
                     icon: Icon(Icons.email),
@@ -134,21 +151,27 @@ class _SignUpPageState extends State<SignUpPage> {
                     hintTextItem: 'Please enter your email'
                 ),
                 new TextFormFieldItem(
+                  //  controller: phoneController,
                     functionRegExp: (value)=>regExpPhoneNumValidator(value),
+                   // onSaved: (newValue)=>phoneController = newValue,
                     onSaved: (newValue)=>phoneNumber = newValue,
                     icon: Icon(Icons.phone),
                     label: 'Phone number',
                     hintTextItem: 'Please enter your Phone number'
                 ),
                 new TextFormFieldItem(
+                  //  controller: cityController,
                     functionRegExp: (v)=>regExpCityValidator(v),
+                    //onSaved: (nv)=>cityController=nv,
                     onSaved: (nv)=>city=nv,
                     icon: Icon(Icons.location_city),
                     label: 'City',
                     hintTextItem: 'Please enter your city'
                 ),
                 new TextFormFieldItem(
+                  //  controller: addressController,
                     functionRegExp: (value)=>regExpAddressValidator(value),
+                    //onSaved: (nv)=>addressController=nv,
                     onSaved: (nv)=>address=nv,
                     icon: Icon(Icons.add_location),
                     label: 'Address',
@@ -179,7 +202,23 @@ class _SignUpPageState extends State<SignUpPage> {
                     margin: EdgeInsets.fromLTRB(50 , 10, 50, 50),
                     alignment: Alignment.topCenter,
                     child: RaisedButton(
-                      onPressed: onCheck,
+                      //onCheck() removed:
+                      onPressed: (){
+                       var formData = formKey.currentState;
+                       if (formData.validate()) {
+                             formData.save();
+                         Navigator.push(context,
+                             MaterialPageRoute(builder: (context) {
+                               return new ProfilePage(name: username,
+                                 email: email, address: address,
+                                 phone: phoneNumber, city: city,
+                               );
+                             },));
+                             print('Valid Input!');
+                       } else {
+                         print('Invalid Input');
+                       }
+                      },
                       child: Text('Submit registration', style: TextStyle(fontSize: 20),),
                       color: Colors.amber,
                     ),
@@ -191,3 +230,5 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 }
+
+

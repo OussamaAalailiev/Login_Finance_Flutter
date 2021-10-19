@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TextFormFieldItem extends StatelessWidget {
+  TextEditingController controller;
   Function functionRegExp;
   Function onSaved;
   Icon icon;
@@ -8,8 +9,9 @@ class TextFormFieldItem extends StatelessWidget {
   String hintTextItem;
   bool obscureText=false;
 
-  TextFormFieldItem({@required this.functionRegExp,@required this.onSaved, @required this.icon,
-                   @required this.label,@required this.hintTextItem, this.obscureText});
+  TextFormFieldItem({@required this.functionRegExp,@required this.onSaved,
+                    @required this.icon, @required this.label,@required this.hintTextItem,
+                    this.obscureText, this.controller});
 
   @override
   Widget build(BuildContext context) {

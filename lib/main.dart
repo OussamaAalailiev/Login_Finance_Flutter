@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_finance/home/home_page.dart';
 import 'package:login_finance/login/login_page.dart';
+import 'package:login_finance/profile/signup_to_profile.dart';
 import 'package:login_finance/signUp/sign_up_page.dart';
 ///ALL RIGHTS ARE RESERVED TO <<Oussama Aalaila>> :)
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context)=> LoginPage(),
         '/signUp': (context)=>SignUpPage(),
-        '/home': (context)=>MyHomePage()
+        '/home': (context)=>MyHomePage(),
+        '/profile': (context)=> ProfilePage()
       },
       home: LoginPage()
 

@@ -14,9 +14,6 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
       ),
       body:  Column(
-        // mainAxisSize: MainAxisSize.min,
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
     //MainAxisSize.min: to resolve the problem of 'renderPixels Overflow of Column Widget'.
     //       mainAxisSize: MainAxisSize.min,
         children: [
